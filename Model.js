@@ -8,5 +8,7 @@ export class Model {
 }
 
 export type DisplayModel<T> = {
-  [$Keys<$PropertyType<Class<T>, 'displayTypes'>>]: string
+  [$Keys<$PropertyType<Class<T>, 'displayTypes'>>]: string;
+
+  buzz: string;
 };
