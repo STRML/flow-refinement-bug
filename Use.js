@@ -1,9 +1,7 @@
 // @flow
-import type {Model, DisplayModel} from './Model';
+import type {DisplayModel} from './Model';
 
-type T = DisplayModel<Model>;
-
-function losesRefinementInConditional(input:T) {
+function losesRefinementInConditional(input:DisplayModel) {
   const a:number = input.baz; // error: doesn't exist
   const b:number = input.bar; // error: exists, but string
   const f:number = input.buzz; // error: exists, but string
@@ -14,7 +12,7 @@ function losesRefinementInConditional(input:T) {
   }
 }
 
-function doesntLoseRefinementOnDestructure(input:T) {
+function doesntLoseRefinementOnDestructure(input:DisplayModel) {
   const {bar} = input;
   if (bar) {
     const c:number = input.baz; // error: doesn't exist
@@ -23,7 +21,7 @@ function doesntLoseRefinementOnDestructure(input:T) {
   }
 }
 
-function doesntLoseRefinementOnBoolCast(input:T) {
+function doesntLoseRefinementOnBoolCast(input:DisplayModel) {
   if (Boolean(input.bar)) {
     const c:number = input.baz; // error: doesn't exist
     const d:number = input.biz; // error: exists, but string
