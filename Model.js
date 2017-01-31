@@ -2,7 +2,7 @@
 
 export class Model {
   static displayTypes = {
-    foo: () => {},
+    bar: () => {},
     biz: () => {}
   };
 }

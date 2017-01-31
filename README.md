@@ -49,9 +49,9 @@ Use.js:7
                ^^^^^^ number
 
 Use.js:8
-  8:   const b:number = input.foo; // error: exists, but string
+  8:   const b:number = input.bar; // error: exists, but string
                         ^^^^^^^^^ string. This type is incompatible with
-  8:   const b:number = input.foo; // error: exists, but string
+  8:   const b:number = input.bar; // error: exists, but string
                ^^^^^^ number
 
 Use.js:9
